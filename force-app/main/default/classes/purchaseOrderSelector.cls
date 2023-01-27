@@ -19,7 +19,7 @@ public with sharing class purchaseOrderSelector extends fflib_SObjectSelector {
         return PurchaseOrder__c.sObjectType;
     }
     public static List<PurchaseOrder__c> getAllRecords(){
-        String qry  = 'SELECT Id, PO_Id__c , Status__c , OrderTotal__c FROM PurchaseOrder__c ';
+        String qry  = 'SELECT Id, PO_Id__c , Status__c , Order_Total__c FROM PurchaseOrder__c ';
         System.debug(Database.query(qry));
         return (List<PurchaseOrder__c>)Database.query(qry);
     }

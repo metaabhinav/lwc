@@ -21,14 +21,16 @@ public with sharing class productSelector extends fflib_SObjectSelector {
         return Product2.sObjectType;
     }
     public static List<Product2> getAllRecords(){
-        String qry  = 'SELECT Id, Name , AvailableUnits__c , Price__c,ProductCode FROM Product2 ';
+        String qry  = 'SELECT Id, Name , AvailableUnits__c , Price__c, ProductCode FROM Product2 ';
         //System.debug(Database.query(qry));
         return (List<Product2>)Database.query(qry);
+    }
+    public static Map<Id, Product2> getAllRecordsMap(){
+        String qry  = 'SELECT Id, Name , AvailableUnits__c , Price__c, ProductCode FROM Product2 ';
+        return new Map<Id, Product2>((List<Product2>)Database.query(qry));
     }
     public  List<Product2> getRecords(){
         return getAllRecords();
     }
 }
-
-
 
