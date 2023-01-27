@@ -1,0 +1,14 @@
+<template>
+    <lightning-card class="slds-p-around_x-small">
+        <div slot="title">
+            <lightning-icon icon-name="utility:fulfillment_order" size="small"></lightning-icon>
+            Invoice
+        </div>
+        <lightning-button label="Place Order" icon-name="utility:new" slot="actions" onclick={handlePlacedOrder}></lightning-button>
+
+        <c-table-with-navigation total-data={finalProducts} columns={columns}>
+        </c-table-with-navigation>
+    </lightning-card>
+</template>
+
+

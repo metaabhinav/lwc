@@ -1,0 +1,17 @@
+<template>
+    <template if:true={showOrders}>
+        <c-my-order onneworder={handleNewOrder}></c-my-order>
+    </template>
+    <template if:true={showProducts}>
+        <c-products-list onadd={handleAddingProducts}></c-products-list>
+    </template>
+    <template if:true={showCart}>
+        <c-my-cart added-products={allCartProducts} ondeleteitem={handleDeletedItemFromCart}
+            onedititemquantity={handleQuantityChange} ongenerateinvoice={handleGenerateInvoice}></c-my-cart>
+    </template>
+    <template if:true={showInvoice}>
+        <c-invoice final-products={finalCartProducts}></c-invoice>
+    </template>
+</template>
+
+

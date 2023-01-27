@@ -1,0 +1,16 @@
+<template>
+    <lightning-card class="slds-p-around_x-small">
+        <div slot="title">
+            <lightning-icon icon-name="utility:fulfillment_order" size="small"></lightning-icon>
+            My Cart
+        </div>
+        <lightning-button label="CheckOut" icon-name="utility:checkout" slot="actions" onclick={generateInvoice}></lightning-button>
+
+        <c-table-with-navigation total-data={productOrderLineItems} columns={columns} hide-checkbox-column="true"
+            onrowaction={handleDeleteRow} onsave={handleSave}>
+        </c-table-with-navigation>
+
+    </lightning-card>
+</template>
+
+

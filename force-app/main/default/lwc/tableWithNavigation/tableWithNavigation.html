@@ -1,0 +1,27 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div>
+        <template if:true={showSearch}>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="6" padding="around-small"></lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input type="search" placeholder="Search Product" onchange={handleSearch}></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <!-- sldsValidatorIgnoreNextLine -->
+        <lightning-datatable data={visibleData} key-field="Id" columns={columns} show-row-number-column={showRowNumberColumn}
+            sorted-by={sortBy} sorted-direction={sortDirection} onsort={doSorting} page-size={rows} onrowselection={rowsSelected}
+            onrowaction={handleRowAction} draft-values={draftValues} onsave={handleSave}>
+        </lightning-datatable>
+    </div>
+    <br/>
+    <template if:false={hidePagination}>
+        <div class="slds-var-m-vertical_medium">
+            <c-pagination page-size={rows} records-length={dataLength} onupdate={navUpdateHandler}>
+            </c-pagination>
+        </div>
+    </template>
+</template>
+
+

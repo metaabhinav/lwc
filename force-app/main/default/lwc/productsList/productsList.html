@@ -1,0 +1,16 @@
+<template>
+    <lightning-card class="slds-p-around_x-small">
+        <div slot="title">
+            <lightning-icon icon-name="utility:products" size="small"></lightning-icon>
+            Products
+        </div>
+        <lightning-button label="Add to Cart" icon-name="utility:new" slot="actions" onclick={addInCart}></lightning-button>
+        <c-table-with-navigation total-data={allProducts} columns={productColumns} hide-checkbox-column="false" rows="10" show-search="true"
+        show-row-number="true" onrowselected={addSelectedProducts}>
+
+        </c-table-with-navigation>
+        
+    </lightning-card>
+</template>
+
+
